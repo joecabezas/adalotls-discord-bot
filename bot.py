@@ -40,10 +40,17 @@ async def _adalots(ctx: SlashContext, number):
         await ctx.send('Adalotl not found or not minted yet')
         return
 
-    embed = discord.Embed(title=f"Adalotl {number}")
-    #embed.add_field(name="Name", value=json.dumps(metadata, indent=4))
-    embed.set_image(url=adalotl.image_url)
+    embed_image = discord.Embed(title=f"Adalotl {number}")
+    embed_image.set_image(url=adalotl.image_url)
 
-    await ctx.send(embeds=[embed])
+    embed_attributes = discord.Embed(title='Attributes')
+    for attribute in adalotl.attributes:
+        embed_attributes.add_field(
+                name='\u200b',
+                value=f"```{attribute}```",
+                inline=True
+                )
+
+    await ctx.send(embeds=[embed_image, embed_attributes])
 
 bot.run(DISCORD_TOKEN)
