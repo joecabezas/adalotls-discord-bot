@@ -9,6 +9,7 @@ verify_ssl = true
 "discord.py" = "*"
 discord-py-slash-command = "*"
 python-dotenv = "*"
+scrapy = "*"
 
 [requires]
 python_version = "3.8"
