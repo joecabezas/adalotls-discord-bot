@@ -27,9 +27,18 @@ adalotls_command_options = create_option(
 async def _adalots(ctx: SlashContext, number):
     await ctx.defer()
 
+    if (number < 1 or number > 888):
+        await ctx.send('Hey!, that adalotl does not exist! :<')
+        return
+
     number = f"{number:03}"
 
-    adalotl = Adalotl(number)
+    adalotl = None
+    try:
+        adalotl = Adalotl(number)
+    except TypeError as e:
+        await ctx.send('Adalotl not found or not minted yet')
+        return
 
     embed = discord.Embed(title=f"Adalotl {number}")
     #embed.add_field(name="Name", value=json.dumps(metadata, indent=4))

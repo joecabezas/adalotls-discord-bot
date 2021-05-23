@@ -16,4 +16,9 @@ class AdalotlMetadata:
         #need to get it from the transaction using the scraper
 
         runner = CrawlRunner()
-        return runner.run(number)[0]
+        result = runner.run(number)
+
+        if not result:
+            return None
+
+        return result[0]
