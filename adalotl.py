@@ -16,7 +16,7 @@ class Adalotl:
 
     @property
     def morph(self):
-        return self.data['morph']
+        return self.data['Morph']
 
     @property
     def image(self):
@@ -24,11 +24,11 @@ class Adalotl:
 
     @property
     def number(self):
-        return self.data['number']
+        return self.data['Number']
 
     @property
     def attributes(self):
-        return self.data['attributes']
+        return self.data['Attributes']
 
     def __str__(self):
         return json.dumps(self.data, indent=4)
