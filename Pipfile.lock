@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "7ae4bac3e0fb18ea75f5f9dfaa06ca3114b7c7f7735848570d1ab08725dd96d0"
+            "sha256": "20c0430a7d45d69055e7e1b097c7e35d0e7e8d26118b4a5c3108c5d63c6f27e7"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -81,6 +81,13 @@
                 "sha256:b6feb6455337df834f6c9962d6ccf771515b7d939bca142b29c20c2376bc6111"
             ],
             "version": "==20.2.0"
+        },
+        "billiard": {
+            "hashes": [
+                "sha256:bff575450859a6e0fbc2f9877d9b715b0bbc07c3565bb7ed2280526a0cdf5ede",
+                "sha256:d91725ce6425f33a97dfa72fb6bfef0e47d4652acd98a032bd1a7fbf06d5fa6a"
+            ],
+            "version": "==3.6.3.0"
         },
         "cffi": {
             "hashes": [
@@ -458,6 +465,14 @@
             ],
             "index": "pypi",
             "version": "==2.5.0"
+        },
+        "scrapyscript": {
+            "hashes": [
+                "sha256:57af055b4450b2d85681cdb0e159473d1a0453bba43f8c3ed3bc2f4fc6b06294",
+                "sha256:fe5169ba2044a340980d8b18bc426f977135cfeeb5870cba2696138b022788ad"
+            ],
+            "index": "pypi",
+            "version": "==1.1.0"
         },
         "service-identity": {
             "hashes": [

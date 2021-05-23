@@ -1,9 +1,14 @@
 import os
+import json
 
 import discord
 from discord.ext import commands
 from discord_slash import SlashCommand, SlashContext
+from discord_slash.utils.manage_commands import create_option
+from discord_slash.model import SlashCommandOptionType
 from dotenv import load_dotenv
+
+from adalotl import Adalotl
 
 load_dotenv()
 DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
@@ -11,9 +16,25 @@ DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
 bot = commands.Bot(command_prefix="!", intents=discord.Intents.default())
 slash = SlashCommand(bot, sync_commands=True)
 
-@slash.slash(name="adalots")
-async def _adalots(ctx: SlashContext):
-    embed = discord.Embed(title="embed test")
-    await ctx.send(content="test", embeds=[embed])
+adalotls_command_options = create_option(
+        name = "number",
+        description = "This is the the Adalotl number, for example, for Adalotl 007, this will be '007'",
+        option_type = SlashCommandOptionType.INTEGER,
+        required = True
+        )
+
+@slash.slash(name="adalots", options=[adalotls_command_options])
+async def _adalots(ctx: SlashContext, number):
+    await ctx.defer()
+
+    number = f"{number:03}"
+
+    adalotl = Adalotl(number)
+
+    embed = discord.Embed(title=f"Adalotl {number}")
+    #embed.add_field(name="Name", value=json.dumps(metadata, indent=4))
+    embed.set_image(url=adalotl.image_url)
+
+    await ctx.send(embeds=[embed])
 
 bot.run(DISCORD_TOKEN)
