@@ -6,10 +6,10 @@ from discord.ext import commands
 from discord_slash import SlashCommand, SlashContext
 from discord_slash.utils.manage_commands import create_option
 from discord_slash.model import SlashCommandOptionType
-from dotenv import load_dotenv
 
 from adalotl import Adalotl
 
+from dotenv import load_dotenv
 load_dotenv()
 DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
 
