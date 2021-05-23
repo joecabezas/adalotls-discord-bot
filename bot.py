@@ -16,15 +16,15 @@ DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
 bot = commands.Bot(command_prefix="!", intents=discord.Intents.default())
 slash = SlashCommand(bot, sync_commands=True)
 
-adalotls_command_options = create_option(
+adalotl_command_options = create_option(
         name = "number",
         description = "This is the the Adalotl number, for example, for Adalotl 007, this will be '007'",
         option_type = SlashCommandOptionType.INTEGER,
         required = True
         )
 
-@slash.slash(name="adalots", options=[adalotls_command_options])
-async def _adalots(ctx: SlashContext, number):
+@slash.slash(name="adalotl", options=[adalotl_command_options])
+async def _adalotl(ctx: SlashContext, number):
     await ctx.defer()
 
     if (number < 1 or number > 888):
