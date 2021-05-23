@@ -1,0 +1,3 @@
+[submodule "stakepoolcentral-scraper"]
+	path = stakepoolcentral-scraper
+	url = https://github.com/joecabezas/stakepoolcentral-scraper.git
