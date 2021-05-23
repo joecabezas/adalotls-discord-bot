@@ -10,9 +10,7 @@ from stakepoolcentral.spiders.tx_metadata_searchresults import TxMetadataSearchr
 
 class CrawlRunner:
     def run(self, number):
-        spider = TxMetadataSearchresultsSpider
-
-        job = Job(spider, number=number)
+        job = Job(TxMetadataSearchresultsSpider, number=number)
         processor = Processor(settings={
             'ITEM_PIPELINES': {
                 'stakepoolcentral.pipelines.StakepoolcentralPipeline': 300,
