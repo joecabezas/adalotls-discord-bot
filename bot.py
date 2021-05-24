@@ -51,6 +51,12 @@ async def _adalotl(ctx: SlashContext, number):
                 inline=True
                 )
 
+    embed_attributes.add_field(
+            name='\u200b',
+            value=f"```{adalotl.morph}```",
+            inline=True
+            )
+
     await ctx.send(embeds=[embed_image, embed_attributes])
 
 bot.run(DISCORD_TOKEN)
