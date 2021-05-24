@@ -1,9 +1,13 @@
 import json
+from pathlib import Path
 
 from crawl_runner import CrawlRunner
 
 class AdalotlMetadata:
     BASE_DATA_DIR='data/adalotls'
+
+    def __init__(self):
+        Path("data/adalotls").mkdir(parents=True, exist_ok=True)
 
     def get(self, number):
         try:
